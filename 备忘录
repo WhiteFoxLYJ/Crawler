@@ -1,0 +1,11 @@
+1.Tika对于图片的识别程度不好
+2.过程： 
+	1）模拟用户-打开网页-输入查询信息-点击查询按钮；
+	2）获取结果html，筛选出当前信息中的，验证码的存储位置，下载。
+	3）对验证码进行处理，识别验证码，计算结果；
+	4）模拟用户-输入验证码结果
+	5）获取反馈页面的html，获取指定位置的第一条url（与搜索得到的最接近的内容）
+	6）获取该url下的内容（有效信息）
+	
+北京工商爬取网站：（无法通过jsoup方式来获取html代码）
+http://qyxy.baic.gov.cn/simple/dealSimpleAction!transport_ww.dhtml?fourth=fourth&sysid=0150008788304366b7d3903b5067bb8c&module=wzsy&styleFlag=sy
