@@ -1,8 +1,8 @@
-1.上海工商信息（可以用UUID来获取信息）
-	http://www.sgs.gov.cn/notice/notice/view?uuid=mS4bNUXI170Wl92wmXHBxZwpBTMhJR8W&tab=01
-	
-2.北京工商信息
-	http://qyxy.baic.gov.cn/
-	http://qyxy.baic.gov.cn/xycx/queryCreditAction!qyxq_view.dhtml?reg_bus_ent_id=ff80808153cc2f180153d0057e491baf&credit_ticket=0C8D3FF2193F2C12FE4E058556D45E88
-	http://www.gsxt.gov.cn/
-	http://www.gsxt.gov.cn/%7BaRutotGAokmClL3vvLsxk9_5YKuht0fgWkCSaO9tjZM7YQjFsEeTRf5pMy8OflYsEc9Gb25HkrQHB-tMVVLQ2_d3dTZw6XCoDCVQAoJ_DKEhc9h03oQE47AEQqA83vKebKutLYYKqRi93XHJ62e1Vvp3p6OrC0-IfEA8aQS1Sn9C7RMDMkigVAplO8NPyiav-1519874045439%7D
+1.Tika对于图片的识别程度不好
+2.过程： 
+	1）模拟用户-打开网页-输入查询信息-点击查询按钮；
+	2）获取结果html，筛选出当前信息中的，验证码的存储位置，下载。
+	3）对验证码进行处理，识别验证码，计算结果；
+	4）模拟用户-输入验证码结果
+	5）获取反馈页面的html，获取指定位置的第一条url（与搜索得到的最接近的内容）
+	6）获取该url下的内容（有效信息）

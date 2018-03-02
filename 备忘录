@@ -9,3 +9,13 @@
 	
 北京工商爬取网站：（无法通过jsoup方式来获取html代码）
 http://qyxy.baic.gov.cn/simple/dealSimpleAction!transport_ww.dhtml?fourth=fourth&sysid=0150008788304366b7d3903b5067bb8c&module=wzsy&styleFlag=sy
+
+
+1.上海工商信息（可以用UUID来获取信息）
+	http://www.sgs.gov.cn/notice/notice/view?uuid=mS4bNUXI170Wl92wmXHBxZwpBTMhJR8W&tab=01
+	
+2.北京工商信息
+	http://qyxy.baic.gov.cn/
+	http://qyxy.baic.gov.cn/xycx/queryCreditAction!qyxq_view.dhtml?reg_bus_ent_id=ff80808153cc2f180153d0057e491baf&credit_ticket=0C8D3FF2193F2C12FE4E058556D45E88
+	http://www.gsxt.gov.cn/
+	http://www.gsxt.gov.cn/%7BaRutotGAokmClL3vvLsxk9_5YKuht0fgWkCSaO9tjZM7YQjFsEeTRf5pMy8OflYsEc9Gb25HkrQHB-tMVVLQ2_d3dTZw6XCoDCVQAoJ_DKEhc9h03oQE47AEQqA83vKebKutLYYKqRi93XHJ62e1Vvp3p6OrC0-IfEA8aQS1Sn9C7RMDMkigVAplO8NPyiav-1519874045439%7D
