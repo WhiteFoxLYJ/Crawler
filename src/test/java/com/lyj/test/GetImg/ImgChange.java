@@ -84,13 +84,15 @@ public class ImgChange {
 	 */
 	private static List<BufferedImage> splitImage(BufferedImage image) throws Exception {
 		final int DIGIT_WIDTH = 19;
-		final int DIGIT_HEIGHT = 17;
+		final int DIGIT_HEIGHT = image.getHeight();
 
 		List<BufferedImage> digitImageList = new ArrayList<BufferedImage>();
-		digitImageList.add(image.getSubimage(2, 2, DIGIT_WIDTH, DIGIT_HEIGHT));
-		digitImageList.add(image.getSubimage(20, 2, DIGIT_WIDTH, DIGIT_HEIGHT));
-		digitImageList.add(image.getSubimage(40, 2, DIGIT_WIDTH, DIGIT_HEIGHT));
-		digitImageList.add(image.getSubimage(60, 2, DIGIT_WIDTH, DIGIT_HEIGHT));
+//		digitImageList.add(image.getSubimage(0, 0, DIGIT_WIDTH, DIGIT_HEIGHT));
+//		digitImageList.add(image.getSubimage(DIGIT_WIDTH/4, 0, DIGIT_WIDTH, DIGIT_HEIGHT));
+		digitImageList.add(image.getSubimage(DIGIT_WIDTH/2, 0, DIGIT_WIDTH, DIGIT_HEIGHT));
+		digitImageList.add(image.getSubimage(DIGIT_WIDTH*2, 0, DIGIT_WIDTH*2, DIGIT_HEIGHT));
+		digitImageList.add(image.getSubimage(DIGIT_WIDTH*4, 0, DIGIT_WIDTH, DIGIT_HEIGHT));
+		digitImageList.add(image.getSubimage(DIGIT_WIDTH*8, 0, DIGIT_WIDTH, DIGIT_HEIGHT));
 
 		return digitImageList;
 
@@ -215,22 +217,25 @@ public class ImgChange {
 		// File dir = new File(DOWNLOAD_DIR);
 		// File[] files = dir.listFiles(new ImageFileFilter("jpg"));
 		// for (File file : files) {
-		File file = new File("C:\\Users\\Administrator\\Pictures\\文字识别\\tmp\\CheckCodeYunSuan.jpg");
+		File file = new File("C:\\Users\\Administrator\\Pictures\\文字识别\\tmp\\CheckCodeYunSuan.png");
 		BufferedImage image = ImageIO.read(file);
 		removeInterence(image);
-		ImageIO.write(image, "JPG", file);
+		ImageIO.write(image, "PNG", file);
 		System.out.println("成功处理：" + file.getName());
 		// }
 
 		// 第3步，判断拆分验证码的标准
 		// 通过PhotoShop打开验证码并放大观察，我这儿的结果参考splitImage()方法中的变量
-		/*
-		 * BufferedImage image = ImageIO.read(file); int counter = 0;
-		 * removeInterence(image); List<BufferedImage> digitImageList =
-		 * splitImage(image); for (int i = 0; i < digitImageList.size(); i++) {
-		 * BufferedImage bi = digitImageList.get(i); ImageIO.write(bi, "JPG",
-		 * new File(TRAIN_DIR, "temp_" + counter++ + ".jpg")); counter++; }
-		 */
+
+//		BufferedImage image = ImageIO.read(file);
+		int counter = 0;
+		removeInterence(image);
+		List<BufferedImage> digitImageList = splitImage(image);
+		for (int i = 0; i < digitImageList.size(); i++) {
+			BufferedImage bi = digitImageList.get(i);
+			ImageIO.write(bi, "JPG", new File(TRAIN_DIR, "temp_" + counter++ + ".jpg"));
+			counter++;
+		}
 
 		// 第4步，判断字体的颜色含义
 		// 通过PhotoShop打开验证码并放大观察，我这儿字体颜色的rgb总值加起来在340。因为是纯色。
