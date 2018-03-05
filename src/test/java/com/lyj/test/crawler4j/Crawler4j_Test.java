@@ -71,7 +71,7 @@ public class Crawler4j_Test extends WebCrawler {
             System.out.println("html长度: " + html.length());
             System.out.println("输出链接个数: " + links.size());
             for(WebURL link_url : links){
-            	System.out.println("---"+url);
+            	System.out.println("---"+link_url);
             }
 //            System.out.println("文本："+text.substring(0, 300));
 		}
